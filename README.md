@@ -1,2 +1,2 @@
 # ATmega32_Drivers
-Implementation of AVR ATmega32 Drivers Full abstracted Layers 
+This Library contains Drivers Implementation for ATmega32 AVR Microcontroller with layered Architecture principle applied.
