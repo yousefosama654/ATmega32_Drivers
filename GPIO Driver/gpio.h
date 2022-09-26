@@ -1,7 +1,7 @@
 /*
  * gpio.h
  *  Created on: Sep 26, 2022
- *      Author: Yousef_Osama
+ *  Author: Yousef_Osama
  * Description: Header file for the AVR GPIO driver
  */
 #ifndef GPIO_H_

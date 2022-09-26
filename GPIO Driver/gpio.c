@@ -7,7 +7,6 @@
 #include "gpio.h"
 #include "common_macros.h" /* To use the macros like SET_BIT */
 #include "avr/io.h" /* To use the IO Ports Registers */
-
 /*
  ▪ Description:
  • Setup the direction of the required pin input/output.
@@ -105,28 +104,28 @@ uint8 GPIO_readPin(uint8 PORT_ID, uint8 PIN_ID) {
 	} else {
 		switch (PORT_ID) {
 		case PORTA_ID:
-			if (BIT_IS_SET(PORTA, PIN_ID)) {
+			if (BIT_IS_SET(PINA, PIN_ID)) {
 				return LOGIC_HIGH;
 			} else {
 				return LOGIC_LOW;
 			}
 			break;
 		case PORTB_ID:
-			if (BIT_IS_SET(PORTB, PIN_ID)) {
+			if (BIT_IS_SET(PINB, PIN_ID)) {
 				return LOGIC_HIGH;
 			} else {
 				return LOGIC_LOW;
 			}
 			break;
 		case PORTC_ID:
-			if (BIT_IS_SET(PORTC, PIN_ID)) {
+			if (BIT_IS_SET(PINC, PIN_ID)) {
 				return LOGIC_HIGH;
 			} else {
 				return LOGIC_LOW;
 			}
 			break;
 		case PORTD_ID:
-			if (BIT_IS_SET(PORTD, PIN_ID)) {
+			if (BIT_IS_SET(PIND, PIN_ID)) {
 				return LOGIC_HIGH;
 			} else {
 				return LOGIC_LOW;
