@@ -4,8 +4,8 @@
  *  Author: Yousef_Osama
  *  Description: source file for the AVR GPIO driver
  */
-#include "common_macros.h" /* To use the macros like SET_BIT */
 #include "gpio.h"
+#include "common_macros.h" /* To use the macros like SET_BIT */
 #include "avr/io.h" /* To use the IO Ports Registers */
 
 /*

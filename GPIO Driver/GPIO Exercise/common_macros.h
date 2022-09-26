@@ -8,11 +8,11 @@
 #ifndef COMMON_MACROS_H_
 #define COMMON_MACROS_H_
 /*to set a certain bit inside a register*/
-#define SET_BIT (REG,BIT_NUM) (REG|=(1<<BIT_NUM))
+#define SET_BIT(REG,BIT_NUM) (REG|=(1<<BIT_NUM))
 /*to clear a certain bit inside a register*/
-#define CLEAR_BIT (REG,BIT_NUM) (REG&=~(1<<BIT_NUM))
+#define CLEAR_BIT(REG,BIT_NUM) (REG&=~(1<<BIT_NUM))
 /*to toggle a certain bit inside a register*/
-#define TOGGLE_BIT (REG,BIT_NUM) (REG^=(1<<BIT_NUM))
+#define TOGGLE_BIT(REG,BIT_NUM) (REG^=(1<<BIT_NUM))
 /*to check if a certain bit inside a register is set*/
 #define BIT_IS_SET(REG,BIT_NUM) (REG & (1<<BIT_NUM))
 /*to check if a certain bit inside a register is clear*/
