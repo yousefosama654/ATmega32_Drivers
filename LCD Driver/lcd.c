@@ -11,6 +11,10 @@
 #include"util/delay.h"
 #include"gpio.h"
 #include"common_macros.h"
+/*
+ * Description :
+ * Send the required command to the screen
+ */
 void LCD_sendCommand(uint8 command) {
 	GPIO_writePin(LCD_RS_PORT_ID, LCD_RS_PIN_ID, LOGIC_LOW);
 	_delay_ms(1);
@@ -40,6 +44,10 @@ void LCD_sendCommand(uint8 command) {
 	_delay_ms(1);
 #endif
 }
+/*
+ * Description :
+ * Display the required character on the screen
+ */
 void LCD_displayCharacter(uint8 character) {
 	GPIO_writePin(LCD_RS_PORT_ID, LCD_RS_PIN_ID, LOGIC_HIGH);
 	_delay_ms(1);
@@ -69,6 +77,12 @@ void LCD_displayCharacter(uint8 character) {
 	_delay_ms(1);
 #endif
 }
+/*
+ * Description :
+ * Initialize the LCD:
+ * 1. Setup the LCD pins directions by use the GPIO driver.
+ * 2. Setup the LCD Data Mode 4-bits or 8-bits.
+ */
 void LCD_init(void) {
 	/* Configure the direction for RS and E pins as output pins */
 	GPIO_setupPinDirection(LCD_RS_PORT_ID,LCD_RS_PIN_ID,PIN_OUTPUT);
@@ -102,6 +116,10 @@ void LCD_init(void) {
 	LCD_sendCommand(LCD_CURSOR_OFF); /* cursor off */
 	LCD_sendCommand(LCD_CLEAR_COMMAND); /* clear LCD at the beginning */
 }
+/*
+ * Description :
+ * Display the required character on the screen
+ */
 void LCD_displayString(string s) {
 	uint8 i = 0;
 	while (s[i] != '\0') {
@@ -109,18 +127,34 @@ void LCD_displayString(string s) {
 		i++;
 	}
 }
+/*
+ * Description :
+ * Send the required command to the screen
+ */
 void LCD_clearScreen(void) {
 	LCD_sendCommand(LCD_CLEAR_COMMAND);
 }
+/*
+ * Description :
+ * Display the required decimal value on the screen
+ */
 void LCD_intgerToString(int data) {
 	char buff[16];
 	itoa(data, buff, 10);
 	LCD_displayString(buff);
 }
+/*
+ * Description :
+ * Display the required string in a specified row and column index on the screen
+ */
 void LCD_displayStringRowColumn(uint8 row, uint8 col, string Str) {
 	LCD_moveCursor(row, col);
 	LCD_displayString(Str);
 }
+/*
+ * Description :
+ * Move the cursor to a specified row and column index on the screen
+ */
 void LCD_moveCursor(uint8 row, uint8 col) {
 	uint8 memorylocation;
 	switch (row) {

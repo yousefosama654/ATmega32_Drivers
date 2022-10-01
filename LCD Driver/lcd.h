@@ -53,12 +53,46 @@
 /*******************************************************************************
  *                      Functions Prototypes                                   *
  *******************************************************************************/
+/*
+ * Description :
+ * Send the required command to the screen
+ */
 void LCD_sendCommand(uint8 command);
+/*
+ * Description :
+ * Display the required character on the screen
+ */
 void LCD_displayCharacter(uint8 character);
+/*
+ * Description :
+ * Initialize the LCD:
+ * 1. Setup the LCD pins directions by use the GPIO driver.
+ * 2. Setup the LCD Data Mode 4-bits or 8-bits.
+ */
 void LCD_init(void);
+/*
+ * Description :
+ * Display the required string on the screen
+ */
 void LCD_displayString(string s);
+/*
+ * Description :
+ * Send the clear screen command
+ */
 void LCD_clearScreen(void);
+/*
+ * Description :
+ * Display the required decimal value on the screen
+ */
 void LCD_intgerToString(int data);
+/*
+ * Description :
+ * Display the required string in a specified row and column index on the screen
+ */
 void LCD_displayStringRowColumn(uint8 row,uint8 col,string Str);
+/*
+ * Description :
+ * Move the cursor to a specified row and column index on the screen
+ */
 void LCD_moveCursor(uint8 row,uint8 col);
 #endif /* LCD_H_ */
