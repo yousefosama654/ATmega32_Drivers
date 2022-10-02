@@ -1,7 +1,19 @@
+/*
+ ============================================================================
+ *  timer0.c
+ *  Date: OCT 3, 2022
+ *  Author: Yousef_Osama
+ *  Description: The Source File of TIMER_0 Driver
+ ============================================================================
+ */
 #include"gpio.h"
 #include"common_macros.h"
 #include"avr/io.h"
 #include"timer0.h"
+/*
+ * Description :
+ * Function responsible for initialize the TIMER_0 driver.
+ */
 void Timer0_init(const Timer_Config *Config_Ptr) {
 	TCNT0 = 0;
 	GPIO_setupPinDirection(PORTB_ID, PIN3_ID, PIN_OUTPUT);
@@ -23,10 +35,18 @@ void Timer0_init(const Timer_Config *Config_Ptr) {
 	TCCR0 = (TCCR0 & 0xcf) | (Config_Ptr->pwm_mode << 4);
 
 }
+/*
+ * Description :
+ *  Setup the compare value based on the required input duty cycle.
+ */
 void Timer0_PWM_Start(uint8 duty_cycle_percentage) {
 	uint8 top = (float) (duty_cycle_percentage / 100.0) * TIMER0_MAX_VALUE;
 	OCR0 = top;
 }
+/*
+ * Description :
+ * Function responsible for De_initialize the TIMER_0 driver.
+ */
 void TIMER0_deinit() {
 	TCNT0 = OCR0 = TCCR0 = 0;
 }
