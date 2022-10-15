@@ -1,6 +1,6 @@
 /*
  ============================================================================
- *  lcd.h
+ *  icu.h
  *  Date: OCT 1, 2022
  *  Author: Yousef_Osama
  *  Description: The Header File of ICU Driver

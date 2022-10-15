@@ -1,6 +1,6 @@
 /*
  ============================================================================
- *  lcd.c
+ *  icu.c
  *  Date: OCT 1, 2022
  *  Author: Yousef_Osama
  *  Description: The Source File of ICU Driver
