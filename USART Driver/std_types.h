@@ -6,7 +6,7 @@
  *
  * Description: types for AVR
  *
- * Author: Mohamed Tarek
+ * Author: yousef_osama
  *
  *******************************************************************************/
 
@@ -39,5 +39,5 @@ typedef unsigned long long    uint64;         /*       0 .. 18446744073709551615
 typedef signed long long      sint64;         /* -9223372036854775808 .. 9223372036854775807 */
 typedef float                 float32;
 typedef double                float64;
-typedef const char* string;
+typedef const uint8* string;
 #endif /* STD_TYPE_H_ */
